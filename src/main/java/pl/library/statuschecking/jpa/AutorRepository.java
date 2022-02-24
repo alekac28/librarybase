@@ -27,12 +27,26 @@ public class AutorRepository {
 
     public Autor findById(int id){
         System.out.println("-------------FIND BY ID------------------");
-        em.clear();
         Autor autor =  em.find(Autor.class, id);
         System.out.println(autor.getId() + " " + autor.getImie() + " " + autor.getNazwisko());
         return em.find(Autor.class, id);
 
 
+    }
+
+    public void updateImie(Autor autor, String imieNowe){
+        System.out.println("------------UPDATE-------------");
+        EntityTransaction transaction = em.getTransaction();
+        transaction.begin();
+        autor.setImie(imieNowe);
+        transaction.commit();
+    }
+
+    public void delete(Autor autor){
+        EntityTransaction transaction = em.getTransaction();
+        transaction.begin();
+        em.remove(autor);
+        transaction.commit();
     }
 
 }

@@ -35,4 +35,8 @@ public class Autor {
         return this.nazwisko;
     }
 
+    public void setImie(String imieNowe){
+        this.imie = imieNowe;
+    }
+
 }
