@@ -27,6 +27,7 @@ public class AutorRepository {
 
     public Autor findById(int id){
         System.out.println("-------------FIND BY ID------------------");
+        em.clear();
         Autor autor =  em.find(Autor.class, id);
         System.out.println(autor.getId() + " " + autor.getImie() + " " + autor.getNazwisko());
         return em.find(Autor.class, id);

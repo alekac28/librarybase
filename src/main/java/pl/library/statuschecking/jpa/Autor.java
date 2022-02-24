@@ -14,6 +14,10 @@ public class Autor {
     private String imie;
     private String nazwisko;
 
+    public Autor() {
+
+    }
+
     public Autor(String imie, String nazwisko){
         this.imie = imie;
         this.nazwisko = nazwisko;
