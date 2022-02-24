@@ -22,4 +22,13 @@ public class Autor {
     public int getId() {
         return this.id;
     }
+
+    public String getImie(){
+        return this.imie;
+    }
+
+    public String getNazwisko(){
+        return this.nazwisko;
+    }
+
 }
