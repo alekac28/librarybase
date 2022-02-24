@@ -10,8 +10,8 @@ public class Main {
 
         System.out.println("Tutaj jeszcze działa");
 
-        Autor autor = arepo.findById(2);
-        System.out.println(autor.getId() + " " + autor.getImie() + " " + autor.getNazwisko());
+        Autor autor = arepo.findById(1);
+//        System.out.println(autor.getId() + " " + autor.getImie() + " " + autor.getNazwisko());
 
     }
 }
