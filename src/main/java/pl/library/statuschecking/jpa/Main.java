@@ -30,6 +30,10 @@ public class Main {
 //        Usuwanie z bazy:
 //        arepo.delete(autor);
 
+        KategoriaRepository krepo = new KategoriaRepository();
+        System.out.println("Dodawanie nowych kategorii:");
+        krepo.createNewCathegory("Romans");
+
 
     }
 }
