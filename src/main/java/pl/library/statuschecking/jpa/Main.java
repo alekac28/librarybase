@@ -1,4 +1,9 @@
 package pl.library.statuschecking.jpa;
+import pl.library.statuschecking.jpa.KategoriaRepository;
+import pl.library.statuschecking.jpa.AutorRepository;
+
+import pl.library.statuschecking.jpa.fillingData.FillingAutor;
+import pl.library.statuschecking.jpa.fillingData.FillingKategoria;
 
 import java.sql.SQLOutput;
 
@@ -8,6 +13,11 @@ public class Main {
 
         AutorRepository arepo = new AutorRepository();
         KategoriaRepository krepo = new KategoriaRepository();
+
+        //WYPEŁNIENIE ENCJI
+        FillingAutor fillingAutor = new FillingAutor();
+        FillingKategoria fillingKategoria = new FillingKategoria();
+
 
 //        System.out.println("Tutaj jeszcze działa");
 
