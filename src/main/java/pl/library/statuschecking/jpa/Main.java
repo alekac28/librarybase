@@ -33,6 +33,8 @@ public class Main {
         KategoriaRepository krepo = new KategoriaRepository();
         System.out.println("Dodawanie nowych kategorii:");
         krepo.createNewCathegory("Romans");
+        Kategoria kategoria = krepo.findById(1);
+        krepo.updateKategoria(kategoria, "Fantastyka");
 
 
     }
