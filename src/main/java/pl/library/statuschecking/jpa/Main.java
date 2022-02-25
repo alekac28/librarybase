@@ -7,6 +7,7 @@ public class Main {
     public static void main(String[] args){
 
         AutorRepository arepo = new AutorRepository();
+        KategoriaRepository krepo = new KategoriaRepository();
 
 //        System.out.println("Tutaj jeszcze działa");
 
@@ -14,27 +15,22 @@ public class Main {
         System.out.println("Co chcesz zrobić?");
         System.out.println("[Wyszukaj]   [Aktualizuj dane]   [Dodaj pozycję]   [Usuń pozycję]");
 
-
-//        Dodawanie do bazy
-        arepo.createNewAutor("Jan", "Kowalski");
-        arepo.createNewAutor("Jacek","Stasiak");
-
-//        Wyszukiwanie w bazie
-        Autor autor = arepo.findById(2);
-
-//        Aktualizacja bazy
-        arepo.updateImie(autor, "Alozjy");
-
-        System.out.println(autor.getId() + " " + autor.getImie() + " " + autor.getNazwisko());
-
+//OPERACJE AUTOR
+////        Wyszukiwanie w bazie
+//        Autor autor = arepo.findById(2);
+////        Aktualizacja bazy
+//        arepo.updateImie(autor, "Alozjy");
+//        System.out.println(autor.getId() + " " + autor.getImie() + " " + autor.getNazwisko());
 //        Usuwanie z bazy:
 //        arepo.delete(autor);
 
-        KategoriaRepository krepo = new KategoriaRepository();
-        System.out.println("Dodawanie nowych kategorii:");
-        krepo.createNewCathegory("Romans");
-        Kategoria kategoria = krepo.findById(1);
-        krepo.updateKategoria(kategoria, "Fantastyka");
+
+//OPERACJE KATEGORIA
+//        KategoriaRepository krepo = new KategoriaRepository();
+//        System.out.println("Dodawanie nowych kategorii:");
+//        krepo.createNewCathegory("Romans");
+//        Kategoria kategoria = krepo.findById(1);
+//        krepo.updateKategoria(kategoria, "Fantastyka");
 
 
     }
