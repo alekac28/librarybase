@@ -1,13 +1,8 @@
 package pl.library.statuschecking.jpa;
-import pl.library.statuschecking.jpa.KategoriaRepository;
-import pl.library.statuschecking.jpa.AutorRepository;
 
 import pl.library.statuschecking.jpa.fillingData.FillingAutor;
 import pl.library.statuschecking.jpa.fillingData.FillingKategoria;
-import pl.library.statuschecking.jpa.fillingData.FillingKsiazka;
 import pl.library.statuschecking.jpa.fillingData.FillingWydawnictwo;
-
-import java.sql.SQLOutput;
 
 public class Main {
 
@@ -32,11 +27,7 @@ public class Main {
 
         //Testy ksiazka
 
-//        Autor autor = arepo.findById(5);
-//        Kategoria kategoria = krepo.findById(1);
-//        Wydawnictwo wydawnictwo = wrepo.findById(3);
-//        ksiazkaRepository.createKsiazka(2007,"Emma",autor,kategoria,wydawnictwo);
-        //ksiazkaRepository.createKsiazka(rokProdukcji, tytul, autor, kategoria, wydawnictwo);
+
 
 
 
