@@ -35,8 +35,9 @@ public class Main {
             case 1:
                 System.out.println("Twój wybór: [Wyszukaj ksiazke]");
                 String searchBook = wyszukiwanie.nextLine();
-                String tytul = String.valueOf(ksiazkaRepository.findByName(searchBook));
-                System.out.println(tytul);
+                String[] autor = ksiazkaRepository.findByName(searchBook);
+                System.out.print("Ksiazka: "+searchBook+" Autor: "+autor[0] + " "+autor[1]);
+                //System.out.println(autor[1]);
                 //Ksiazka ksiazka = ksiazkaRepository.findByName("Emma");
 
 

@@ -3,6 +3,7 @@ package pl.library.statuschecking.jpa;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.EntityTransaction;
+import javax.persistence.Query;
 
 import static javax.persistence.Persistence.createEntityManagerFactory;
 
@@ -20,16 +21,17 @@ public class KsiazkaRepository {
         transaction.commit();
     }
 
-    public String findByName(String title){
+    public String[] findByName(String title){
         System.out.println("Wyszukuję książkę...");
         //Query q = em.createQuery("SELECT tytul FROM Ksiazka WHERE tytul=:title",Ksiazka.class).setParameter("title", title).getSingleResult();
 
 //        //String test = em.createQuery("SELECT tytul FROM Ksiazka WHERE tytul=:title",String.class).setParameter("title", title).getSingleResult();
-        String tytul = em.createQuery("SELECT tytul FROM Ksiazka WHERE tytul=:title",String.class).setParameter("title", title).getSingleResult();
-      // String tytul = em.createQuery("SELECT tytul, imie, nazwisko FROM Ksiazka INNER JOIN Autor ON Ksiazka.autor_id = Autor.id WHERE tytul=:title",String.class).setParameter("title", title).getSingleResult();
-//        //Ksiazka ksiazka =
-//        //System.out.println(tytul);
-        return tytul;
+        String imie = em.createQuery("SELECT a.imie FROM Autor a, Ksiazka k WHERE k.tytul=:title and k.autor=a.id",String.class).setParameter("title", title).getSingleResult();
+        String nazwisko = em.createQuery("SELECT a.nazwisko FROM Autor a, Ksiazka k WHERE k.tytul=:title and k.autor=a.id",String.class).setParameter("title", title).getSingleResult();
+        String[] arr = new String[2];
+        arr[0] = imie;
+        arr[1] = nazwisko;
+        return arr;
     }
 
 }
