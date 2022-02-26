@@ -4,6 +4,8 @@ import pl.library.statuschecking.jpa.fillingData.FillingAutor;
 import pl.library.statuschecking.jpa.fillingData.FillingKategoria;
 import pl.library.statuschecking.jpa.fillingData.FillingWydawnictwo;
 
+import java.util.Scanner;
+
 public class Main {
 
     public static void main(String[] args){
@@ -23,9 +25,34 @@ public class Main {
         //EKRAN POWITALNY
         System.out.println("Witaj w naszej bibliotece!");
         System.out.println("Co chcesz zrobić?");
-        System.out.println("[Wyszukaj]   [Aktualizuj dane]   [Dodaj pozycję]   [Usuń pozycję]");
+        System.out.println("[Wyszukaj ksiazke - 1]   [Aktualizuj dane - 2]   [Dodaj pozycję - 3]   [Usuń pozycję - 4]");
 
-        //Testy ksiazka
+        Scanner wyszukiwanie = new Scanner(System.in);
+        Scanner wyszukiwanieKsiazka = new Scanner(System.in);
+        int search = Integer.parseInt(wyszukiwanie.nextLine());
+
+        switch(search) {
+            case 1:
+                System.out.println("Twój wybór: [Wyszukaj ksiazke]");
+                String searchBook = wyszukiwanie.nextLine();
+                String tytul = String.valueOf(ksiazkaRepository.findByName(searchBook));
+                System.out.println(tytul);
+                //Ksiazka ksiazka = ksiazkaRepository.findByName("Emma");
+
+
+                break;
+            case 2:
+                System.out.println("Twój wybór: [Aktualizuj dane]");
+                break;
+            case 3:
+                System.out.println("Twój wybór: [Dodaj pozycję]");
+                break;
+            case 4:
+                System.out.println("Twój wybór: [Usuń pozycję]");
+                break;
+            default:
+                System.out.println("Brak opcji!");
+        }
 
 
 

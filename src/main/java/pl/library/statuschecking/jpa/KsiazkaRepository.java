@@ -20,4 +20,16 @@ public class KsiazkaRepository {
         transaction.commit();
     }
 
+    public String findByName(String title){
+        System.out.println("Wyszukuję książkę...");
+        //Query q = em.createQuery("SELECT tytul FROM Ksiazka WHERE tytul=:title",Ksiazka.class).setParameter("title", title).getSingleResult();
+
+//        //String test = em.createQuery("SELECT tytul FROM Ksiazka WHERE tytul=:title",String.class).setParameter("title", title).getSingleResult();
+        String tytul = em.createQuery("SELECT tytul FROM Ksiazka WHERE tytul=:title",String.class).setParameter("title", title).getSingleResult();
+      // String tytul = em.createQuery("SELECT tytul, imie, nazwisko FROM Ksiazka INNER JOIN Autor ON Ksiazka.autor_id = Autor.id WHERE tytul=:title",String.class).setParameter("title", title).getSingleResult();
+//        //Ksiazka ksiazka =
+//        //System.out.println(tytul);
+        return tytul;
+    }
+
 }

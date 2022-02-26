@@ -8,6 +8,7 @@ public class Ksiazka {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
+    @Column(name="tytul",unique=true)
     private String tytul;
     @OneToOne
     private Autor autor;
