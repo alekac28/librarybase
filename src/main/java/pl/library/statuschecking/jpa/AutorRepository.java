@@ -40,6 +40,7 @@ public class AutorRepository {
         transaction.begin();
         autor.setImie(imieNowe);
         transaction.commit();
+        System.out.println(autor.getId() + " " + autor.getImie() + " " + autor.getNazwisko());
     }
 
     public void delete(Autor autor){

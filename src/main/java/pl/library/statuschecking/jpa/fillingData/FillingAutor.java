@@ -17,6 +17,7 @@ public class FillingAutor {
             arepo.createNewAutor("Berenika", "Czerwińska");
             arepo.createNewAutor("Magdalena","Sikorska");
             arepo.createNewAutor("Marcelina","Michalak");
+            arepo.createNewAutor("Test","Testowy");
 
         }
 

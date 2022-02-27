@@ -25,31 +25,41 @@ public class Main {
         //EKRAN POWITALNY
         System.out.println("Witaj w naszej bibliotece!");
         System.out.println("Co chcesz zrobić?");
-        System.out.println("[Wyszukaj ksiazke - 1]   [Aktualizuj dane - 2]   [Dodaj pozycję - 3]   [Usuń pozycję - 4]");
+        System.out.println("[Wyszukaj autora - 1]   [Aktualizuj dane - 2]   [Dodaj pozycję - 3]   [Usuń pozycję - 4]");
 
         Scanner wyszukiwanie = new Scanner(System.in);
-        Scanner wyszukiwanieKsiazka = new Scanner(System.in);
         int search = Integer.parseInt(wyszukiwanie.nextLine());
 
         switch(search) {
             case 1:
-                System.out.println("Twój wybór: [Wyszukaj ksiazke]");
+                System.out.println("Twój wybór: [Wyszukaj autora]");
                 String searchBook = wyszukiwanie.nextLine();
                 String[] autor = ksiazkaRepository.findByName(searchBook);
-                System.out.print("Ksiazka: "+searchBook+" Autor: "+autor[0] + " "+autor[1]);
-                //System.out.println(autor[1]);
-                //Ksiazka ksiazka = ksiazkaRepository.findByName("Emma");
-
-
+                //System.out.print("Ksiazka: "+searchBook+" Autor: "+autor[0] + " "+autor[1]);
                 break;
             case 2:
                 System.out.println("Twój wybór: [Aktualizuj dane]");
+                System.out.println("Imię jakiego autora chcesz zmienić? Podaj ID.");
+                Scanner scan = new Scanner(System.in);
+                int searchAutor = scan.nextInt();
+                Autor autor1 = arepo.findById(searchAutor);
+                System.out.println("Podaj nowe imię Autora: ");
+                String newName = wyszukiwanie.nextLine();
+                arepo.updateImie(autor1, newName);
                 break;
             case 3:
                 System.out.println("Twój wybór: [Dodaj pozycję]");
+                System.out.println("Jaką kategorię chcesz dodać?");
+                String newCathegory = wyszukiwanie.nextLine();
+                krepo.createNewCathegory(newCathegory);
                 break;
             case 4:
                 System.out.println("Twój wybór: [Usuń pozycję]");
+                System.out.println("Podaj ID autora do usunięcia");
+                Scanner scann = new Scanner(System.in);
+                int findAutor = scann.nextInt();
+                Autor autorr = arepo.findById(findAutor);
+                arepo.delete(autorr);
                 break;
             default:
                 System.out.println("Brak opcji!");

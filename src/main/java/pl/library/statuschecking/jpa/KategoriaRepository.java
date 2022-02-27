@@ -15,12 +15,13 @@ public class KategoriaRepository {
 
     public void createNewCathegory(String nazwaKategorii){
 
-        System.out.println("---------------CREATING---------------");
+//        System.out.println("---------------CREATING---------------");
         Kategoria newOne = new Kategoria(nazwaKategorii);
         EntityTransaction transaction = em.getTransaction();
         transaction.begin();
         em.persist(newOne);
-        System.out.println("ID Kategorii: "+newOne.getId());
+        System.out.println("##########Dodawanie kategorii##########");
+        System.out.println("Dodano kategorię: "+newOne.getId()+" "+nazwaKategorii);
         transaction.commit();
 
     }

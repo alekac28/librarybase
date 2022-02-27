@@ -5,6 +5,8 @@ import javax.persistence.EntityManagerFactory;
 import javax.persistence.EntityTransaction;
 import javax.persistence.Query;
 
+import java.sql.SQLOutput;
+
 import static javax.persistence.Persistence.createEntityManagerFactory;
 
 public class KsiazkaRepository {
@@ -31,6 +33,8 @@ public class KsiazkaRepository {
         String[] arr = new String[2];
         arr[0] = imie;
         arr[1] = nazwisko;
+        System.out.println("##########Wyniki wyszukiwania##########");
+        System.out.println("Tytuł: "+title+"\nAutor: "+arr[0]+" "+arr[1]);
         return arr;
     }
 
